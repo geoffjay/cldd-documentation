@@ -1,0 +1,212 @@
+%
+% CLDD Proposal
+%
+% Author: Geoff Johnson
+%
+
+\documentclass[11pt]{article}
+
+\usepackage[titles]{tocloft}
+\usepackage{verbatim}
+\usepackage[pdftex]{graphics,graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{pdfpages}
+\usepackage{float}
+\usepackage{amssymb}
+\usepackage{biblatex}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\bibliography{references}
+
+\usepackage{hyperref}
+\hypersetup{
+  pdfauthor={Geoff Johnson},
+  pdftitle={CLDD Project Proposal},
+  pdfsubject={Project Proposal},
+  pdfkeywords={CLDD Project Proposal},
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=blue
+}
+
+% Packages used for appendices.
+\usepackage{appendix}
+\usepackage{listings}
+\usepackage{color}
+\definecolor{light-gray}{gray}{0.95}
+\definecolor{listinggray}{gray}{0.9}
+\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
+\definecolor{light-blue}{rgb}{0.6,0.720,0.85}
+
+% The default margins are too wide all the way around, reset them.
+\setlength{\topmargin}{-.5in}
+\setlength{\textheight}{9in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+
+% Change paragraph formatting.
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2ex}
+
+\begin{document}
+\nocite{*}
+
+  \title{
+    Project Proposal \\
+    Configurable Server for Control, Logging, and Data Acquisition
+  }
+
+  \author{
+    Geoff Johnson
+    %<student ID> \\ \\
+    %<course>
+  }
+
+  \renewcommand{\today}{January 1, 2014}
+  \maketitle
+  \thispagestyle{empty}
+  \newpage
+  \mbox{}
+  \thispagestyle{empty}
+
+  \newpage
+  \addtocounter{page}{-1}
+  \pagenumbering{roman}
+  \tableofcontents
+  %\listoffigures
+  %\listoftables
+  %\lstlistoflistings
+
+  \newpage
+  \pagenumbering{arabic}
+
+  % XXX fill in or omit sections as needed, for now just blasting ideas
+
+  % The institution of submission requires that this document contain
+  % information about the student and company that the project is by/for.
+  \section{Background}
+    \label{sec:bg}
+
+    \subsection{Student}
+      \label{sec:bg-student}
+
+    \subsection{Company}
+      \label{sec:bg-company}
+
+    \subsection{Project}
+      \label{sec:bg-project}
+
+  % Describe the problem domain and issues at a high level.
+  \section{Problem Description}
+    \label{sec:desc}
+
+    \subsection{Scope/Domain}
+      \label{sec:desc-domain}
+
+      \subsubsection{Configuration Specification}
+        \label{sec:desc-domain-conf}
+
+      \subsubsection{Modular Abstraction Allowing for Device Type Expansion}
+        \label{sec:desc-domain-mod}
+
+      \subsubsection{Instrument Measurement}
+        \label{sec:desc-domain-instr}
+
+      \subsubsection{Automated Process Control}
+        \label{sec:desc-domain-ctrl}
+
+  % The proposed treatment to the problem described.
+  \section{Proposed Solution}
+    \label{sec:soln}
+
+    % Discuss the benefit the end user gains from the proposed system that they
+    % are currently missing.
+    \subsection{Business Value}
+      \label{sec:soln-val}
+
+    \subsection{Development Process Model}
+      \label{sec:soln-model}
+
+      \subsubsection{Analysis}
+        \label{sec:soln-model-analysis}
+
+      \subsubsection{Design}
+        \label{sec:soln-model-design}
+
+      \subsubsection{Implementation}
+        \label{sec:soln-model-implementation}
+
+      \subsubsection{Testing}
+        \label{sec:soln-model-testing}
+
+    % Existing technologies needed to realize a solution.
+    \subsection{Technologies Required}
+      \label{sec:soln-tech}
+
+      \subsubsection{ZeroMQ and Protocol Buffers for Messaging}
+        \label{sec:soln-tech-msg}
+
+      \subsubsection{Configuration and Communication Through libCLD}
+        \label{sec:soln-tech-cld}
+
+    % XXX some other subsection ideas:
+    %     - what metrics will be used to evaluate success
+    %     - how will you know your objective has been met
+
+  % Step-by-step details of the work required to achieve the proposed goal.
+  \section{Work Plan}
+    \label{sec:plan}
+
+    \subsection{Project Timeline}
+      \label{sec:plan-time}
+
+    \subsection{Tasks \& Activities}
+      \label{sec:plan-tasks}
+
+    \subsection{Milestones}
+      \label{sec:plan-milestones}
+
+  % Insert a list of references that were cited.
+  \newpage
+  \printbibliography
+
+  % Appendices
+  \newpage
+  \addappheadtotoc
+  \appendix
+  \appendixpage
+
+  % Left over from a previous proposal document, edit later as needed.
+  \section{Glossary of Abbreviations and Terms}
+    \label{app:glossary}
+
+    Commonly used terms and an explanation of them are given in Table
+    \ref{tab:glossary}, these are primarily generic computing terms.
+
+    \begin{table}[H]
+      \centering
+      \begin{tabular}{l | p{10cm}}
+        \hline
+        Term & Definition/Explanation \\ [0.5ex]
+        \hline\hline
+        Advantech & An industrial data acquisition device manufacturer. \\
+        C & Common software programming language. \\
+        Client & Refers to the software application that communications with a daemon. \\
+        Comedi & Open source hardware drivers for Control and Measurement Devices. \\
+        Daemon & Common term used to refer to a server application in a Linux system. \\
+        Data Acquisition & The act of gathering data from a real world process. \\
+        GLib & Standard set of Linux system libraries for the Gnome window manager. \\
+        GNU & A collection of applications, libraries, and developer tools. \\
+        Perl & A high level programming language good for rapid development. \\
+        Python & A high level programming language good for rapid development. \\
+        RS232 & Serial communication devices that has been ubiquitous for decades. \\
+        Vala & An object oriented programming language that uses the GObject type system and compiles to C code. \\
+        Watchdog & Standard concept for monitoring a vital systems heartbeat. \\
+        XML & Extensible markup language, common for use in messaging systems. \\
+        \hline
+      \end{tabular}
+      \caption{Glossary of Terms}
+      \label{tab:glossary}
+    \end{table}
+
+\end{document}
